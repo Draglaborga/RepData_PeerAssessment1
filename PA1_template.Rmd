@@ -9,9 +9,35 @@ output:
 ## Loading and preprocessing the data
 
 
+```{r}
+library(data.table)
+library(dplyr)
+data <- fread("activity.csv", header = T)
+print(head(data))
+```
+
 
 ## What is mean total number of steps taken per day?
 
+1. Calculate the total number of steps taken per day
+
+```{r}
+steps_per_date <- data %>% group_by(date) %>% summarise(steps=sum(steps, na.rm=T))
+print(head(steps_per_date))
+```
+
+2. Make a histogram of the total number of steps taken each day
+
+```{r}
+hist(steps_per_date$steps)
+```
+
+3. Calculate and report the mean and median of the total number of steps taken per day
+
+```{r}
+print(paste("Mean of steps per day:", mean(steps_per_date$steps)))
+print(paste("Median of steps per day:", median(steps_per_date$steps)))
+```
 
 
 ## What is the average daily activity pattern?
