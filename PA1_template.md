@@ -1,9 +1,4 @@
----
-title: "Reproducible Research: Peer Assessment 1"
-output: 
-  html_document:
-    keep_md: true
----
+# Reproducible Research: Peer Assessment 1
 ## Introduction
 
 This assignment makes use of data from a personal activity monitoring device. This device collects data at 5 minute intervals through out the day. The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day.
@@ -52,7 +47,7 @@ hist(steps_per_date$steps,
      main="Steps per Day Hist", xlab="Steps per Day")
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
 
 3. Calculate and report the mean and median of the total number of steps taken per day
 
@@ -83,7 +78,7 @@ plot(steps_per_interval$interval_index,
      ylab="Average number of steps")
 ```
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -158,7 +153,7 @@ hist(steps_new_per_date$steps_new, ylim=c(0,40),
      main="Steps per Day Hist with filled in NA", xlab="Steps per Day")
 ```
 
-![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-9-1.png) 
 
 The impact of imputing missing data using average number of steps per 5 minute interval is more days with number of steps between 10000 and 15000 and less days with very few and very high number of steps.
 
@@ -198,4 +193,4 @@ xyplot(avg_steps~interval_index | factor(weekday), data=steps_per_weekdays,
        ylab="Average number of steps")
 ```
 
-![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
