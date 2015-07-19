@@ -111,9 +111,15 @@ hist(steps_per_date$steps, ylim=c(0,40),
      main="Steps per Day Hist with NA", xlab="Steps per Day")
 hist(steps_new_per_date$steps_new, ylim=c(0,40), 
      main="Steps per Day Hist with filled in NA", xlab="Steps per Day")
-```
 
-The impact of imputing missing data using average number of steps per 5 minute interval is more days with number of steps between 10000 and 15000 and less days with very few and very high number of steps.
+mean_steps_new <- mean(steps_new_per_date$steps)
+median_steps_new <- median(steps_new_per_date$steps)
+
+diff_table <- data.frame(name=c("With NA", "Filled in NA"), 
+                         mean=c(mean_steps, mean_steps_new), 
+                         median=c(median_steps, median_steps_new))
+print(diff_table)
+```
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
